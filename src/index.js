@@ -7,16 +7,16 @@ const route = require('./routes');
 const port = 3000;
 
 // Set static path
-                        app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Set template engine
 const hbs = handlebars.create({
     partialsDir: ['resources/views/partials/'],
     extname: '.hbs',
 });
-app.engine("hbs", hbs.engine);
-app.set("view engine", "hbs");
-app.set("views", path.join(__dirname, "resources/views"));
+app.engine('hbs', hbs.engine);
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'resources/views'));
 
 // Router
 route(app);
